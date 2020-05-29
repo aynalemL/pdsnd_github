@@ -151,18 +151,22 @@ def user_stats(df):
     print('User count of user by user type:', count_of_user_type)
 
     # TO DO: Display counts of gender
-    if city != 'washington':
-         count_of_gender = df['Gender'].value_counts()
-         print('The count of gender:', count_of_gender)
+    try:
+        count_of_gender = df['Gender'].value_counts()
+        print('The count of gender:', count_of_gender)
+    except KeyError:
+        print('Gender does not exist')
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    if city != 'washington':
-       earliest = df['Birth Year'].min()
-       latest = df['Birth Year'].max()
-       mode = df['Birth Year'].mode()
-       print('Oldest were born on: {}.\nThe youngest were born on: {}.'
-          '\nThe most popular birth year is {}.'.format(earliest, latest, mode))
-
+    try:
+        earliest = df['Birth Year'].min()
+        latest = df['Birth Year'].max()
+        mode = df['Birth Year'].mode()
+        print('Oldest were born on: {}.\nThe youngest were born on: {}.'
+              '\nThe most popular birth year is {}.'.format(earliest, latest, mode))
+    except KeyError:
+        print("Birth Year doesn't exist")
+        
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
     
