@@ -37,6 +37,7 @@ Resources/Reference :
 3. Tutorials Point
 4. Pandas Documentation
 5. geeksforgeeks.com
+6. https://www.geeksforgeeks.org/python-extracting-rows-using-pandas-iloc/
 
 ###Running bikeshare.py
 Run the python script (bikeshare.py) using a suitable python interpreter. This script was written in python 3.
