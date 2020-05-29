@@ -184,7 +184,7 @@ def display_data(df):
             start_loc += 5
             end_loc += 5
 
-            end_display = input("Do you wish to continue?: ").lower()
+            end_display = input("Do you want to re-start?: ").lower()
             if end_display == 'no':
                 break
 
