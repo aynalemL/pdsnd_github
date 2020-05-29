@@ -165,6 +165,28 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
+    
+def display_data(df):
+    """
+    Display contents of the CSV file to the display as requested by
+    the user.
+    """
+
+    start_loc = 0
+    end_loc = 5
+
+    display_active = input("Do you want to see the raw data?: ").lower()
+
+    if display_active == 'yes':
+        while end_loc <= df.shape[0] - 1:
+
+            print(df.iloc[start_loc:end_loc, :])
+            start_loc += 5
+            end_loc += 5
+
+            end_display = input("Do you want to re-start?: ").lower()
+            if end_display == 'no':
+                break
 
 
 def main():
