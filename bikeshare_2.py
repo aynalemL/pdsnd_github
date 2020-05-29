@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = {'chicago': '/Users/home/PycharmProjects/bikeshare/resources/chicago',
+CITY_DATA = {'chicago': 'chicago.csv'
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
@@ -141,7 +141,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users. If washington selected there is no gender or birth_year column"""
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -151,14 +151,16 @@ def user_stats(df):
     print('User count of user by user type:', count_of_user_type)
 
     # TO DO: Display counts of gender
-    count_of_gender = df['Gender'].value_counts()
-    print('The count of gender:', count_of_gender)
+    if city != 'washington':
+         count_of_gender = df['Gender'].value_counts()
+         print('The count of gender:', count_of_gender)
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    earliest = df['Birth Year'].min()
-    latest = df['Birth Year'].max()
-    mode = df['Birth Year'].mode()
-    print('Oldest were born on: {}.\nThe youngest were born on: {}.'
+    if city != 'washington':
+       earliest = df['Birth Year'].min()
+       latest = df['Birth Year'].max()
+       mode = df['Birth Year'].mode()
+       print('Oldest were born on: {}.\nThe youngest were born on: {}.'
           '\nThe most popular birth year is {}.'.format(earliest, latest, mode))
 
     print("\nThis took %s seconds." % (time.time() - start_time))

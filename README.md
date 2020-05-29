@@ -19,6 +19,7 @@ The main purpose of the project is to a bike-share system provider for many majo
 ### Data Sources
 
 The data is provided by Motivate, which is a bike share system provider for many cities in the United States. This particular data contains a dataset for three cities (Chicago, New York City, and Washington DC).
+The gender and birt_year column only exist on chicago and New York City dataset
 ### Requirement and Setup
 Downloaded the required software and packages using Anaconda follow this link to download Anaconda and add the required packages - > https://www.anaconda.com/products/individual
 1.Python 3
